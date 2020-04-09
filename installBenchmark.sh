@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 export HIP_PATH=$PWD/HIP/build/install
 export PATH=$HIP_PATH/bin:$PATH
 BENCH="https://github.com/jatinx/benchmark.git"

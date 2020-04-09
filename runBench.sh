@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 set -e
 echo "Running Benchmark"
 git clone https://github.com/cjatin/HIPPerfTests.git
@@ -13,4 +13,5 @@ cd HIPPerfTests
 HIPCCBIN=$CDIR/HIP/patchbuild/install/bin/hipcc
 export HIP_PATH=$HIPDIR/patchbuild/install
 $HIPCCBIN main.cc -isystem "$CDIR/benchmark/build/install/include" -L"$CDIR/benchmark/build/install/lib" -lbenchmark -lpthread -o mainpost -O3
-$CDIR/benchmark/tools/compare.py benchmarks ./mainpre ./mainpost
+./mainpre --benchmark_format=json > pre.json
+./mainpost --benchmark_format=json > post.json

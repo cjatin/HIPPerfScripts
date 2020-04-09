@@ -1,5 +1,4 @@
-#! /bin/sh
-set -e
+#! /bin/bash
 rm -rf HIP
 git clone https://github.com/ROCm-Developer-Tools/HIP.git # Hard coded
 CDIR=$PWD
